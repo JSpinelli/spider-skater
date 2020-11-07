@@ -33,7 +33,6 @@ public class RopeShooting : MonoBehaviour
             {
                 if (hit.transform.CompareTag("Ropable"))
                 {
-                    Debug.Log("IT IS ROPABLE");
                     rope.enabled = true;
                     rope.distance = hit.distance - 1;
                     rope.connectedAnchor = hit.point;
