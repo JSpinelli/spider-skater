@@ -357,6 +357,8 @@ GameObject:
   - component: {fileID: 1755428652}
   - component: {fileID: 1755428651}
   - component: {fileID: 1755428650}
+  - component: {fileID: 1755428654}
+  - component: {fileID: 1755428653}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -454,6 +456,42 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.298}
+--- !u!114 &1755428653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755428649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 281ad8525cf1c6d418c3efc65bc2b385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerToFall: 1
+  respawnTimer: 5
+  body: {fileID: 1755428654}
+--- !u!50 &1755428654
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755428649}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &124156155807865602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -623,6 +661,11 @@ PrefabInstance:
     - target: {fileID: 2673171857318127513, guid: 962dd88b4d7863c4ca0b9c9afbea4abd,
         type: 3}
       propertyPath: ropeTimer
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673171857318127513, guid: 962dd88b4d7863c4ca0b9c9afbea4abd,
+        type: 3}
+      propertyPath: distanceToClimb
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2673171857318127514, guid: 962dd88b4d7863c4ca0b9c9afbea4abd,

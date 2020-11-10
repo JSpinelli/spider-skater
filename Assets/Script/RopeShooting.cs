@@ -14,6 +14,7 @@ public class RopeShooting : MonoBehaviour
 
     private bool ropeClimbing = false;
     public float ropeTimer = 1;
+    public float distanceToClimb = 1;
     private float remainingRopeTimer = 0;
 
     // Start is called before the first frame update
@@ -79,7 +80,7 @@ public class RopeShooting : MonoBehaviour
     {
         if (remainingRopeTimer < 0)
         {
-            rope.distance = rope.distance - 1;
+            rope.distance = rope.distance - distanceToClimb;
             remainingRopeTimer = ropeTimer;
         }else{
             remainingRopeTimer = remainingRopeTimer - Time.deltaTime;
