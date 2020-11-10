@@ -12,6 +12,10 @@ public class RopeShooting : MonoBehaviour
 
     private bool ropeAttached = false;
 
+    private bool ropeClimbing = false;
+    public float ropeTimer = 1;
+    private float remainingRopeTimer = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,40 +25,64 @@ public class RopeShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ropeAttached){
-            ropeRender.SetPosition(0,transform.position);
+        if (ropeAttached)
+        {
+            ropeRender.SetPosition(0, transform.position);
+            if (ropeClimbing){
+                this.climb();
+            }
         }
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit2D[] hits;
             Debug.DrawRay(transform.position, (pointerPosition.position - transform.position), Color.green);
             hits = Physics2D.RaycastAll(transform.position, (pointerPosition.position - transform.position), ropeDistance);
-            foreach (var hit in hits)
+            int i = 0;
+            bool hit = false;
+            while (i < hits.Length && !hit)
             {
-                if (hit.transform.CompareTag("Ropable"))
+                if (hits[i].transform.CompareTag("Ropable"))
                 {
+                    hit = true;
                     rope.enabled = true;
-                    rope.distance = hit.distance - 1;
-                    rope.connectedAnchor = hit.point;
-                    Vector3[] line = {transform.position, hit.point};
+                    rope.distance = hits[i].distance - 1;
+                    rope.connectedAnchor = hits[i].point;
+                    Vector3[] line = { transform.position, hits[i].point };
                     ropeRender.useWorldSpace = true;
                     ropeRender.SetPositions(line);
-                    
-                    ropeRender.enabled=true;
+                    ropeRender.enabled = true;
                     ropeAttached = true;
                 }
+                i++;
             }
 
         }
-        if (Input.GetMouseButtonDown(1)){ 
-            ropeRender.enabled=false;
+        if (Input.GetMouseButtonUp(0) && ropeAttached)
+        {
+            ropeRender.enabled = false;
             rope.enabled = false;
             ropeAttached = false;
         }
-        if (Input.GetKeyDown(KeyCode.Space)){
-            rope.distance = rope.distance -1;
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ropeClimbing = true;
+            remainingRopeTimer = ropeTimer;
         }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            ropeClimbing = false;
+            remainingRopeTimer = 0;
+        }
+    }
 
-        
+    public void climb()
+    {
+        if (remainingRopeTimer < 0)
+        {
+            rope.distance = rope.distance - 1;
+            remainingRopeTimer = ropeTimer;
+        }else{
+            remainingRopeTimer = remainingRopeTimer - Time.deltaTime;
+        }
     }
 }

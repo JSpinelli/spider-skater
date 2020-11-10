@@ -620,6 +620,11 @@ PrefabInstance:
       propertyPath: ropeRender
       value: 
       objectReference: {fileID: 1545816938}
+    - target: {fileID: 2673171857318127513, guid: 962dd88b4d7863c4ca0b9c9afbea4abd,
+        type: 3}
+      propertyPath: ropeTimer
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2673171857318127514, guid: 962dd88b4d7863c4ca0b9c9afbea4abd,
         type: 3}
       propertyPath: m_Name
