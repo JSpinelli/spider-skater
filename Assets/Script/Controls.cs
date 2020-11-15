@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RopeShooting : MonoBehaviour
+public class Controls : MonoBehaviour
 {
     public Transform pointerPosition;
     public SpringJoint2D rope;
@@ -16,6 +16,8 @@ public class RopeShooting : MonoBehaviour
     public float ropeTimer = 1;
     public float distanceToClimb = 1;
     private float remainingRopeTimer = 0;
+
+    public float rotationSpeed = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +34,13 @@ public class RopeShooting : MonoBehaviour
             if (ropeClimbing){
                 this.climb();
             }
+        }else{
+            float horizontal = Input.GetAxis("Horizontal");
+            transform.Rotate(
+                0f,
+                0f,
+                horizontal * rotationSpeed
+            );
         }
         if (Input.GetMouseButtonDown(0))
         {
