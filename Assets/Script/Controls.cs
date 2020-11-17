@@ -16,6 +16,7 @@ public class Controls : MonoBehaviour
     public float ropeTimer = 1;
     public float distanceToClimb = 1;
     private float remainingRopeTimer = 0;
+    public float distanceRemovedOnRope = 2f;
 
     public float rotationSpeed = 5f;
 
@@ -55,7 +56,7 @@ public class Controls : MonoBehaviour
                 {
                     hit = true;
                     rope.enabled = true;
-                    rope.distance = hits[i].distance - 1;
+                    rope.distance = hits[i].distance - distanceRemovedOnRope;
                     rope.connectedAnchor = hits[i].point;
                     Vector3[] line = { transform.position, hits[i].point };
                     ropeRender.useWorldSpace = true;

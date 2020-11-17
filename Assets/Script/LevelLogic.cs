@@ -8,7 +8,11 @@ public class LevelLogic : MonoBehaviour
     public Transform spawnTransform;
     // Start is called before the first frame update
     public void RespawnPlayer(){
+        
         player.transform.position = spawnTransform.position;
+        player.transform.rotation = Quaternion.identity;
+        var rb2d = player.GetComponent<Rigidbody2D>();
+        rb2d.velocity = new Vector2(0,0);
     }
     void Start()
     {
