@@ -299,7 +299,7 @@ PrefabInstance:
     - target: {fileID: 5512098544219705010, guid: 23fc6699e798c9c45858f0be449e3578,
         type: 3}
       propertyPath: jumpForce
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23fc6699e798c9c45858f0be449e3578, type: 3}
@@ -400,6 +400,11 @@ PrefabInstance:
       propertyPath: m_Anchor.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4298678823443451477, guid: 962dd88b4d7863c4ca0b9c9afbea4abd,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4376418692045042674, guid: 962dd88b4d7863c4ca0b9c9afbea4abd,
         type: 3}
       propertyPath: pointerPosition
@@ -433,7 +438,7 @@ PrefabInstance:
     - target: {fileID: 5798536405255658212, guid: 962dd88b4d7863c4ca0b9c9afbea4abd,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 962dd88b4d7863c4ca0b9c9afbea4abd, type: 3}
@@ -1698,7 +1703,7 @@ PrefabInstance:
     - target: {fileID: 5512098544219705010, guid: 23fc6699e798c9c45858f0be449e3578,
         type: 3}
       propertyPath: jumpForce
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23fc6699e798c9c45858f0be449e3578, type: 3}
