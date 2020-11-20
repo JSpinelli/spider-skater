@@ -6,7 +6,7 @@ public class PlayerTrack : MonoBehaviour {
 
     public float smoothSpeed=10f;
 
-    public Vector3 offset = new Vector3(0,2,-10);
+    public Vector3 offset = new Vector3(0,2,-20);
 
     private void LateUpdate()
     {
