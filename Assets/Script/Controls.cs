@@ -19,6 +19,8 @@ public class Controls : MonoBehaviour
 
     public float rotationSpeed = 5f;
 
+    public float distanceRemovedOnContact = 2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,7 +57,7 @@ public class Controls : MonoBehaviour
                 {
                     hit = true;
                     rope.enabled = true;
-                    rope.distance = hits[i].distance - 1;
+                    rope.distance = hits[i].distance - distanceRemovedOnContact;
                     rope.connectedAnchor = hits[i].point;
                     Vector3[] line = { transform.position, hits[i].point };
                     ropeRender.useWorldSpace = true;
