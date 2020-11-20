@@ -434,6 +434,7 @@ GameObject:
   - component: {fileID: 2673171857318127511}
   - component: {fileID: 2673171857318127510}
   - component: {fileID: 4376418692045042674}
+  - component: {fileID: 2498141948572562252}
   - component: {fileID: 2673171857318127512}
   - component: {fileID: 2673171857318127515}
   - component: {fileID: 1060769341179941980}
@@ -465,6 +466,7 @@ Transform:
   - {fileID: 6382540259106524029}
   - {fileID: 2791067794645777694}
   - {fileID: 666909988221106813}
+  - {fileID: 4602081679546645111}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -533,11 +535,27 @@ MonoBehaviour:
   pointerPosition: {fileID: 0}
   rope: {fileID: 2673171857318127515}
   ropeRender: {fileID: 0}
-  ropeDistance: 10000
+  ropeDistance: 100
   ropeTimer: 1
   distanceToClimb: 1
-  rotationSpeed: 5
+  rotationSpeed: 3
   distanceRemovedOnContact: 5
+  maxVelocity: 100
+  body: {fileID: 2673171857318127512}
+  skate: {fileID: 4298678823443451477}
+--- !u!114 &2498141948572562252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2673171857318127514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cff7a2fd067eafe43bc283787412996b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flips: 0
 --- !u!50 &2673171857318127512
 Rigidbody2D:
   serializedVersion: 4
@@ -1471,6 +1489,78 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 251.06506
     m_UpperAngle: 609.6945
+--- !u!1 &4566748870967358705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4602081679546645111}
+  - component: {fileID: 2713181174846690526}
+  - component: {fileID: 5013860815432187866}
+  m_Layer: 8
+  m_Name: SpiderDeadHitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4602081679546645111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4566748870967358705}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2673171857318127511}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &2713181174846690526
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4566748870967358705}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.32}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4959408, y: 0.72023845}
+  m_EdgeRadius: 0
+--- !u!114 &5013860815432187866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4566748870967358705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6addc22ff8199e24d91f4de8dd53bda6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 2673171857318127512}
+  velocityTreshold: 10
 --- !u!1 &5281334456843023548
 GameObject:
   m_ObjectHideFlags: 0
@@ -1640,7 +1730,7 @@ GameObject:
   - component: {fileID: 4298678823443451477}
   m_Layer: 10
   m_Name: Sk8te
-  m_TagString: Untagged
+  m_TagString: Skate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

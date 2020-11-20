@@ -21,10 +21,21 @@ public class Controls : MonoBehaviour
 
     public float distanceRemovedOnContact = 2;
 
+    public float maxVelocity = 10f;
+
+    public Rigidbody2D body;
+    public Rigidbody2D skate;
+
     // Start is called before the first frame update
     void Start()
     {
 
+    }
+
+    void FixedUpdate()
+    {
+        body.velocity = Vector2.ClampMagnitude(body.velocity, maxVelocity);
+        skate.velocity = Vector2.ClampMagnitude(skate.velocity, maxVelocity);
     }
 
     // Update is called once per frame
@@ -33,10 +44,13 @@ public class Controls : MonoBehaviour
         if (ropeAttached)
         {
             ropeRender.SetPosition(0, transform.position);
-            if (ropeClimbing){
+            if (ropeClimbing)
+            {
                 this.climb();
             }
-        }else{
+        }
+        else
+        {
             float horizontal = Input.GetAxis("Horizontal");
             transform.Rotate(
                 0f,
@@ -53,6 +67,7 @@ public class Controls : MonoBehaviour
             bool hit = false;
             while (i < hits.Length && !hit)
             {
+                //Debug.Log("TAG:" + hits[i].transform.tag);
                 if (hits[i].transform.CompareTag("Ropable"))
                 {
                     hit = true;
@@ -65,7 +80,19 @@ public class Controls : MonoBehaviour
                     ropeRender.enabled = true;
                     ropeAttached = true;
                 }
-                i++;
+                else
+                {
+                    if (hits[i].transform.CompareTag("Mesh") || hits[i].transform.CompareTag("Player"))
+                    {
+                        i++;
+                    }
+                    else
+                    {
+                        hit = true;
+                    }
+                }
+
+
             }
 
         }
@@ -93,7 +120,9 @@ public class Controls : MonoBehaviour
         {
             rope.distance = rope.distance - distanceToClimb;
             remainingRopeTimer = ropeTimer;
-        }else{
+        }
+        else
+        {
             remainingRopeTimer = remainingRopeTimer - Time.deltaTime;
         }
     }
