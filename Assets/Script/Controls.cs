@@ -49,15 +49,12 @@ public class Controls : MonoBehaviour
                 this.climb();
             }
         }
-        else
-        {
-            float horizontal = Input.GetAxis("Horizontal");
-            transform.Rotate(
-                0f,
-                0f,
-                horizontal * rotationSpeed
-            );
-        }
+        float horizontal = Input.GetAxis("Horizontal");
+        transform.Rotate(
+            0f,
+            0f,
+            horizontal * rotationSpeed
+        );
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit2D[] hits;
