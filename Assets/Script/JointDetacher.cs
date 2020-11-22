@@ -6,7 +6,6 @@ public class JointDetacher : MonoBehaviour
     public DistanceJoint2D[] thingsToDisable2 = {};
 
     public void detachThings(){
-        Debug.Log("CALLED");
         var  i = 0 ;
         while (i < thingsToDisable.Length){
             thingsToDisable[i].enabled = false;

@@ -10,18 +10,21 @@ public class LevelLogic : MonoBehaviour
 
     public PlayerTrack playerTrack;
 
+    public float respawnTimer = 2f;
+
     private GameObject currentPlayer = null;
 
     public TextMeshProUGUI flipCounter;
 
     private JointDetacher jointDetacher;
+    private Controls playercontrols;
     private bool respawning = false;
 
     // Start is called before the first frame update
     public void RespawnPlayer()
     {
         if (!respawning)
-        {   
+        {
             respawning = true;
             StartCoroutine(Example());
         }
@@ -33,29 +36,29 @@ public class LevelLogic : MonoBehaviour
     {
         if (currentPlayer)
         {
-            Debug.Log("WE HAVE SPIDER");
+            playercontrols.DisableControls();
             jointDetacher.detachThings();
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(respawnTimer);
             Destroy(currentPlayer);
         }
-        Debug.Log("TRIGGERED");
         currentPlayer = Instantiate(player, spawnTransform.position, Quaternion.identity);
         playerTrack.player = currentPlayer.transform;
-        var controls = player.GetComponent<Controls>();
-        var ropeJoint = player.GetComponent<SpringJoint2D>();
-        var hitBox = player.GetComponentInChildren<SpiderDeadHitbox>();
+        playercontrols = currentPlayer.GetComponent<Controls>();
+        var ropeJoint = currentPlayer.GetComponent<SpringJoint2D>();
+        var hitBox = currentPlayer.GetComponentInChildren<SpiderDeadHitbox>();
         jointDetacher = currentPlayer.GetComponent<JointDetacher>();
         hitBox.cameraTracker = playerTrack;
-        controls.ropeRender = ropeRender;
-        controls.rope = ropeJoint;
-        controls.pointerPosition = pointerPosition;
+        playercontrols.ropeRender = ropeRender;
+        playercontrols.rope = ropeJoint;
+        playercontrols.pointerPosition = pointerPosition;
         respawning = false;
-        flipCounter.text = "Flips: 0";
+        if (flipCounter)
+            flipCounter.text = "Flips: 0";
     }
     public void updateFlips(float flips)
     {
-        Debug.Log(flips);
-        flipCounter.text = "Flips: " + flips;
+        if (flipCounter)
+            flipCounter.text = "Flips: " + flips;
     }
     void Start()
     {

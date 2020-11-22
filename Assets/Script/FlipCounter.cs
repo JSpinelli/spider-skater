@@ -30,7 +30,6 @@ public class FlipCounter : MonoBehaviour
         flips = WindupRotation / 360;
         if (Mathf.Abs(flips) > 1)
         {
-            Debug.Log("FLIP AMOUNTS: " + flips);
             if (flips > 0)
             {
                 flipCounter += Mathf.Abs(Mathf.Floor(flips));

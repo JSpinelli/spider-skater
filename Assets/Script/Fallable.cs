@@ -21,7 +21,6 @@ public class Fallable : MonoBehaviour
         {
             if (!shouldFall)
             {
-                Debug.Log("Start Fall");
                 StartCoroutine(FallAfterDelay());
                 StartCoroutine(RespawnAfterDelay());
             }

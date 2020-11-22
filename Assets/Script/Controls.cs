@@ -23,8 +23,12 @@ public class Controls : MonoBehaviour
 
     public float maxVelocity = 10f;
 
+    public float swingForce = 1f;
+
     public Rigidbody2D body;
     public Rigidbody2D skate;
+
+    private bool controlsDisabled = false;
 
     // Start is called before the first frame update
     void Start()
@@ -39,76 +43,97 @@ public class Controls : MonoBehaviour
     }
 
     // Update is called once per frame
+
+    public void DisableControls()
+    {
+        controlsDisabled = true;
+        ropeRender.enabled = false;
+        rope.enabled = false;
+        ropeAttached = false;
+    }
+    public void EnableControls()
+    {
+        controlsDisabled = false;
+    }
     void Update()
     {
-        if (ropeAttached)
+        if (!controlsDisabled)
         {
-            ropeRender.SetPosition(0, transform.position);
-            if (ropeClimbing)
+            if (ropeAttached)
             {
-                this.climb();
-            }
-        }
-        float horizontal = Input.GetAxis("Horizontal");
-        transform.Rotate(
-            0f,
-            0f,
-            horizontal * rotationSpeed
-        );
-        if (Input.GetMouseButtonDown(0))
-        {
-            RaycastHit2D[] hits;
-            Debug.DrawRay(transform.position, (pointerPosition.position - transform.position), Color.green);
-            hits = Physics2D.RaycastAll(transform.position, (pointerPosition.position - transform.position), ropeDistance);
-            int i = 0;
-            bool hit = false;
-            while (i < hits.Length && !hit)
-            {
-                //Debug.Log("TAG:" + hits[i].transform.tag);
-                if (hits[i].transform.CompareTag("Ropable"))
+                ropeRender.SetPosition(0, transform.position);
+                if (ropeClimbing)
                 {
-                    hit = true;
-                    rope.enabled = true;
-                    rope.distance = hits[i].distance - distanceRemovedOnContact;
-                    rope.connectedAnchor = hits[i].point;
-                    Vector3[] line = { transform.position, hits[i].point };
-                    ropeRender.useWorldSpace = true;
-                    ropeRender.SetPositions(line);
-                    ropeRender.enabled = true;
-                    ropeAttached = true;
+                    this.climb();
                 }
-                else
+                body.AddForce( new Vector2( Input.GetAxis("Horizontal") * swingForce, 0));
+            }
+            else
+            {
+                float horizontal = Input.GetAxis("Horizontal");
+                transform.Rotate(
+                    0f,
+                    0f,
+                    horizontal * rotationSpeed
+                );
+            }
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                RaycastHit2D[] hits;
+                Debug.DrawRay(transform.position, (pointerPosition.position - transform.position), Color.green);
+                hits = Physics2D.RaycastAll(transform.position, (pointerPosition.position - transform.position), ropeDistance);
+                int i = 0;
+                bool hit = false;
+                while (i < hits.Length && !hit)
                 {
-                    if (hits[i].transform.CompareTag("Mesh") || hits[i].transform.CompareTag("Player"))
+                    //Debug.Log("TAG:" + hits[i].transform.tag);
+                    if (hits[i].transform.CompareTag("Ropable"))
                     {
-                        i++;
+                        hit = true;
+                        rope.enabled = true;
+                        rope.distance = hits[i].distance - distanceRemovedOnContact;
+                        rope.connectedAnchor = hits[i].point;
+                        Vector3[] line = { transform.position, hits[i].point };
+                        ropeRender.useWorldSpace = true;
+                        ropeRender.SetPositions(line);
+                        ropeRender.enabled = true;
+                        ropeAttached = true;
                     }
                     else
                     {
-                        hit = true;
+                        if (hits[i].transform.CompareTag("Mesh") || hits[i].transform.CompareTag("Player"))
+                        {
+                            i++;
+                        }
+                        else
+                        {
+                            hit = true;
+                        }
                     }
+
+
                 }
 
-
             }
+            if (Input.GetMouseButtonUp(0) && ropeAttached)
+            {
+                ropeRender.enabled = false;
+                rope.enabled = false;
+                ropeAttached = false;
+            }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                ropeClimbing = true;
+                remainingRopeTimer = ropeTimer;
+            }
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                ropeClimbing = false;
+                remainingRopeTimer = 0;
+            }
+        }
 
-        }
-        if (Input.GetMouseButtonUp(0) && ropeAttached)
-        {
-            ropeRender.enabled = false;
-            rope.enabled = false;
-            ropeAttached = false;
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ropeClimbing = true;
-            remainingRopeTimer = ropeTimer;
-        }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            ropeClimbing = false;
-            remainingRopeTimer = 0;
-        }
     }
 
     public void climb()
