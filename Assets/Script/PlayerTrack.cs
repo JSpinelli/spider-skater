@@ -9,7 +9,7 @@ public class PlayerTrack : MonoBehaviour
 
     public Vector3 offset = new Vector3(0, 2, -20);
 
-    public float shakeDuration = 3f;
+    public float shakeDuration = 0.5f;
     public float shakeMagnitude = 3f;
     private float shakeTimer = 0f;
 

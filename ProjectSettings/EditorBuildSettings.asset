@@ -4,5 +4,26 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/LevelTest.unity
+    guid: 24e85ad761e590f4caa22873a3ca4a1e
+  - enabled: 1
+    path: Assets/Scenes/Dylan TestScene.unity
+    guid: 4df44789e98196f43844f108eca1fa39
+  - enabled: 1
+    path: Assets/Scenes/TestScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Tutorials/Tutorial - 1 - Movement.unity
+    guid: c17ec4712579f1a4396092bccbe7e044
+  - enabled: 1
+    path: Assets/Scenes/Tutorials/Tutorial - 2 -Shimmy.unity
+    guid: ce8ad799e67ce56449068d33437d1cc2
+  - enabled: 1
+    path: Assets/Scenes/Tutorials/Tutorial - 3 - Rope.unity
+    guid: 7933f051eabf78242b5123d223f53f73
+  - enabled: 1
+    path: Assets/Scenes/Tutorials/Tutorial - 4 - Gravity.unity
+    guid: 45a1eb59415a08a409283ccc4010a0c8
   m_configObjects: {}

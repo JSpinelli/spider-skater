@@ -379,7 +379,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 8c8dc0f4e3b74a646a372c367c28f15c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -791,6 +791,7 @@ Transform:
   - {fileID: 2791067794645777694}
   - {fileID: 666909988221106813}
   - {fileID: 4602081679546645111}
+  - {fileID: 6710012837189955438}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1170,7 +1171,7 @@ HingeJoint2D:
   m_ConnectedRigidBody: {fileID: 2673171857318127512}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
+  m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: -0.75}
   m_ConnectedAnchor: {x: -0.12689346, y: -0.29210803}
   m_UseMotor: 0
@@ -2688,7 +2689,7 @@ HingeJoint2D:
   m_ConnectedRigidBody: {fileID: 1485532951672939926}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
+  m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: -0.75}
   m_ConnectedAnchor: {x: 0.016622327, y: 0.50592124}
   m_UseMotor: 0
@@ -3449,6 +3450,63 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: -66.54804
     m_UpperAngle: 171.90276
+--- !u!1 &8128243239880552035
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6710012837189955438}
+  - component: {fileID: 6143737540035437440}
+  m_Layer: 12
+  m_Name: Skate for legs
+  m_TagString: Skate
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &6710012837189955438
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8128243239880552035}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.07, y: -1.247, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_Children: []
+  m_Father: {fileID: 2673171857318127511}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &6143737540035437440
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8128243239880552035}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.07778311, y: 0.38553262}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.643588, y: 0.120714664}
+  m_EdgeRadius: 0
 --- !u!1 &8418304419492462002
 GameObject:
   m_ObjectHideFlags: 0
@@ -3748,7 +3806,7 @@ HingeJoint2D:
   m_ConnectedRigidBody: {fileID: 2239945452150382279}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
+  m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: -0.75}
   m_ConnectedAnchor: {x: 0.02868076, y: 0.51434845}
   m_UseMotor: 0

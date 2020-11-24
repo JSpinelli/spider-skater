@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Controls : MonoBehaviour
@@ -66,7 +67,7 @@ public class Controls : MonoBehaviour
                 {
                     this.climb();
                 }
-                body.AddForce( new Vector2( Input.GetAxis("Horizontal") * swingForce, 0));
+                body.AddForce(new Vector2(Input.GetAxis("Horizontal") * swingForce, 0));
             }
             else
             {
@@ -131,6 +132,11 @@ public class Controls : MonoBehaviour
             {
                 ropeClimbing = false;
                 remainingRopeTimer = 0;
+            }
+            if (Input.GetKeyUp(KeyCode.R))
+            {
+                Scene scene = SceneManager.GetActiveScene(); 
+                SceneManager.LoadScene(scene.name);
             }
         }
 

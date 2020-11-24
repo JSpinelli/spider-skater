@@ -271,8 +271,8 @@ MonoBehaviour:
   player: {fileID: 0}
   smoothSpeed: 10
   offset: {x: 0, y: 2, z: -10}
-  shakeDuration: 3
-  shakeMagnitude: 3
+  shakeDuration: 0.5
+  shakeMagnitude: 1
 --- !u!81 &3441098925363679703
 AudioListener:
   m_ObjectHideFlags: 0
