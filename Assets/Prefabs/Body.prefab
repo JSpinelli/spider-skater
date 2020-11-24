@@ -861,7 +861,7 @@ MonoBehaviour:
   ropeRender: {fileID: 0}
   ropeDistance: 100
   ropeTimer: 1
-  distanceToClimb: 1
+  distanceToClimb: 3
   rotationSpeed: 3
   distanceRemovedOnContact: 5
   maxVelocity: 100
@@ -893,7 +893,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.5
+  m_Mass: 0.3
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
