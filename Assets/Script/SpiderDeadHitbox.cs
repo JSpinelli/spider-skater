@@ -17,7 +17,7 @@ public class SpiderDeadHitbox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Player") && !other.CompareTag("Skate"))
+        if (!other.CompareTag("Player") && !other.CompareTag("Skate") && !other.CompareTag("Object"))
         {
             cameraTracker.ScreenShake(rb.velocity.magnitude);
             if (rb.velocity.magnitude > velocityTreshold){

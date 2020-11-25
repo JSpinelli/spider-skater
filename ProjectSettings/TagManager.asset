@@ -8,6 +8,7 @@ TagManager:
   - Logic
   - Mesh
   - Skate
+  - Object
   layers:
   - Default
   - TransparentFX
