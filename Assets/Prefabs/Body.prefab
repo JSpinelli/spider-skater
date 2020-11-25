@@ -860,7 +860,7 @@ MonoBehaviour:
   pointerPosition: {fileID: 0}
   rope: {fileID: 3671054141966961839}
   ropeRender: {fileID: 0}
-  ropeDistance: 100
+  ropeDistance: 20
   ropeTimer: 1
   distanceToClimb: 3
   rotationSpeed: 3
