@@ -9,6 +9,8 @@ public class SpiderDeadHitbox : MonoBehaviour
     public Rigidbody2D rb;
     public float velocityTreshold = 2f;
 
+    private bool disableShake = false;
+
     public PlayerTrack cameraTracker;
     void Awake()
     {
@@ -19,8 +21,15 @@ public class SpiderDeadHitbox : MonoBehaviour
     {
         if (!other.CompareTag("Player") && !other.CompareTag("Skate") && !other.CompareTag("Object"))
         {
-            cameraTracker.ScreenShake(rb.velocity.magnitude);
-            if (rb.velocity.magnitude > velocityTreshold){
+
+            if (rb.velocity.magnitude > velocityTreshold)
+            {
+                if (!disableShake)
+                {
+                    cameraTracker.ScreenShake(rb.velocity.magnitude);
+                    disableShake = true;
+                }
+
                 levelLogic.RespawnPlayer();
             }
         }

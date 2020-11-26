@@ -53,7 +53,14 @@ public class LevelLogic : MonoBehaviour
         playercontrols.pointerPosition = pointerPosition;
         respawning = false;
         if (flipCounter)
+        {
             flipCounter.text = "Flips: 0";
+        }
+        DeathWallMovement deathWall = FindObjectOfType<DeathWallMovement>();
+        if (deathWall){
+            deathWall.Respawn();
+        }
+
     }
     public void updateFlips(float flips)
     {

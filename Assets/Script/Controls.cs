@@ -63,6 +63,7 @@ public class Controls : MonoBehaviour
             if (ropeAttached)
             {
                 ropeRender.SetPosition(0, transform.position);
+                ropeRender.SetPosition(1, rope.connectedAnchor);
                 if (ropeClimbing)
                 {
                     this.climb();
@@ -103,7 +104,7 @@ public class Controls : MonoBehaviour
                     }
                     else
                     {
-                        if (hits[i].transform.CompareTag("Mesh") || hits[i].transform.CompareTag("Player"))
+                        if (hits[i].transform.CompareTag("Mesh") || hits[i].transform.CompareTag("Player") || hits[i].transform.CompareTag("Skate"))
                         {
                             i++;
                         }
