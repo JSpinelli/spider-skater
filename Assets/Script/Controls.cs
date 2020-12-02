@@ -29,6 +29,16 @@ public class Controls : MonoBehaviour
     public Rigidbody2D body;
     public Rigidbody2D skate;
 
+
+    // Rope Animation variables
+    public float timeToCastRope = 0.5f;
+    private float timerToCastRope;
+    private RaycastHit2D attachPoint;
+    private bool ropeAnimTriggered = false;
+    private bool shouldAttach = false;
+
+
+
     private bool controlsDisabled = false;
 
     // Start is called before the first frame update
@@ -56,8 +66,51 @@ public class Controls : MonoBehaviour
     {
         controlsDisabled = false;
     }
+    void RopeAnimation()
+    {
+        if (ropeAnimTriggered)
+        {
+            if (timerToCastRope > 0)
+            {
+                timerToCastRope -= Time.deltaTime;
+                Vector3[] line = { transform.position, this.GetPointDistanceFromObject(1 - (timerToCastRope / timeToCastRope)) };
+                ropeRender.SetPositions(line);
+            }
+            else
+            {
+                ropeAnimTriggered = false;
+                if (shouldAttach)
+                {
+                    rope.enabled = true;
+                    rope.connectedAnchor = attachPoint.point;
+                    rope.distance = attachPoint.distance - distanceRemovedOnContact;
+                    Vector3[] line = { transform.position, attachPoint.point };
+                    ropeRender.SetPositions(line);
+                    ropeAttached = true;
+
+                }
+                else
+                {
+                    ropeRender.enabled = false;
+                    Vector3[] line = { transform.position, transform.position };
+                    ropeRender.SetPositions(line);
+                }
+
+            }
+        }
+
+    }
+    Vector2 GetPointDistanceFromObject(float percentageTraveled)
+    {
+        Vector2 directionOfTravel = attachPoint.point - new Vector2(transform.position.x, transform.position.y);
+        float dist = Vector3.Distance(new Vector2(transform.position.x, transform.position.y), attachPoint.point);
+        Vector2 finalDirection = directionOfTravel.normalized * (percentageTraveled * dist);
+        Vector2 targetPosition = new Vector2(transform.position.x, transform.position.y) + finalDirection;
+        return targetPosition;
+    }
     void Update()
     {
+        RopeAnimation();
         if (!controlsDisabled)
         {
             if (ropeAttached)
@@ -89,18 +142,10 @@ public class Controls : MonoBehaviour
                 bool hit = false;
                 while (i < hits.Length && !hit)
                 {
-                    //Debug.Log("TAG:" + hits[i].transform.tag);
                     if (hits[i].transform.CompareTag("Ropable"))
                     {
                         hit = true;
-                        rope.enabled = true;
-                        rope.distance = hits[i].distance - distanceRemovedOnContact;
-                        rope.connectedAnchor = hits[i].point;
-                        Vector3[] line = { transform.position, hits[i].point };
-                        ropeRender.useWorldSpace = true;
-                        ropeRender.SetPositions(line);
-                        ropeRender.enabled = true;
-                        ropeAttached = true;
+                        shouldAttach = true;
                     }
                     else
                     {
@@ -111,16 +156,25 @@ public class Controls : MonoBehaviour
                         else
                         {
                             hit = true;
+                            shouldAttach = false;
                         }
                     }
-
-
+                }
+                if (hit)
+                {
+                    attachPoint = hits[i];
+                    ropeAnimTriggered = true;
+                    ropeRender.useWorldSpace = true;
+                    timerToCastRope = timeToCastRope;
+                    ropeRender.enabled = true;
                 }
 
             }
             if (Input.GetMouseButtonUp(0) && ropeAttached)
             {
                 ropeRender.enabled = false;
+                Vector3[] line = { transform.position, transform.position };
+                ropeRender.SetPositions(line);
                 rope.enabled = false;
                 ropeAttached = false;
             }
@@ -136,7 +190,7 @@ public class Controls : MonoBehaviour
             }
             if (Input.GetKeyUp(KeyCode.R))
             {
-                Scene scene = SceneManager.GetActiveScene(); 
+                Scene scene = SceneManager.GetActiveScene();
                 SceneManager.LoadScene(scene.name);
             }
         }

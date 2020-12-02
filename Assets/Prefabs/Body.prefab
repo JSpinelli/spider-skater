@@ -869,6 +869,7 @@ MonoBehaviour:
   swingForce: 0.5
   body: {fileID: 2673171857318127512}
   skate: {fileID: 4298678823443451477}
+  timeToCastRope: 0.1
 --- !u!114 &2498141948572562252
 MonoBehaviour:
   m_ObjectHideFlags: 0

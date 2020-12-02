@@ -26,13 +26,13 @@ public class LevelLogic : MonoBehaviour
         if (!respawning)
         {
             respawning = true;
-            StartCoroutine(Example());
+            StartCoroutine(Respawn());
         }
 
 
     }
 
-    IEnumerator Example()
+    IEnumerator Respawn()
     {
         if (currentPlayer)
         {
