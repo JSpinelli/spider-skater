@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Controls : MonoBehaviour
@@ -37,6 +35,11 @@ public class Controls : MonoBehaviour
     private bool ropeAnimTriggered = false;
     private bool shouldAttach = false;
 
+    private bool mouseIsDown = false;
+
+    public GroundedDetection gDetector;
+
+    [System.NonSerialized] public bool spiderDead = false;
 
 
     private bool controlsDisabled = false;
@@ -57,6 +60,7 @@ public class Controls : MonoBehaviour
 
     public void DisableControls()
     {
+        spiderDead = true;
         controlsDisabled = true;
         ropeRender.enabled = false;
         rope.enabled = false;
@@ -65,6 +69,7 @@ public class Controls : MonoBehaviour
     public void EnableControls()
     {
         controlsDisabled = false;
+        spiderDead = false;
     }
     void RopeAnimation()
     {
@@ -79,7 +84,7 @@ public class Controls : MonoBehaviour
             else
             {
                 ropeAnimTriggered = false;
-                if (shouldAttach)
+                if (shouldAttach && mouseIsDown )
                 {
                     rope.enabled = true;
                     rope.connectedAnchor = attachPoint.point;
@@ -135,6 +140,7 @@ public class Controls : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
+                mouseIsDown = true;
                 RaycastHit2D[] hits;
                 Debug.DrawRay(transform.position, (pointerPosition.position - transform.position), Color.green);
                 hits = Physics2D.RaycastAll(transform.position, (pointerPosition.position - transform.position), ropeDistance);
@@ -170,8 +176,9 @@ public class Controls : MonoBehaviour
                 }
 
             }
-            if (Input.GetMouseButtonUp(0) && ropeAttached)
+            if (Input.GetMouseButtonUp(0))
             {
+                mouseIsDown = false;
                 ropeRender.enabled = false;
                 Vector3[] line = { transform.position, transform.position };
                 ropeRender.SetPositions(line);
