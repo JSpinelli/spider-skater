@@ -10,12 +10,22 @@ public class Booster : MonoBehaviour
     private bool activated = false;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!activated && other.CompareTag("Player"))
+        if (!activated && other.CompareTag("Skate"))
         {
             activated = true;
             var rigidBody = other.GetComponent<Rigidbody2D>();
-            Debug.Log(rigidBody);
-            rigidBody.AddForce(transform.up * jumpForce);
+            //var rigidBodies = other.GetComponentsInChildren<Rigidbody2D>();
+            Debug.Log(rigidBody.velocity);
+            Debug.Log(transform.up * jumpForce);
+            var direction = Vector3.Dot(rigidBody.velocity.normalized, transform.up);
+            if (direction > -0.5f)
+            {
+                rigidBody.AddForce(transform.up * jumpForce);
+            }
+            // for (int i = 0; i < rigidBodies.Length; i++)
+            // {
+            //     rigidBodies[i].AddForce(transform.up * jumpForce);
+            // }
             StartCoroutine(RechargeAfterDelay());
         }
     }
