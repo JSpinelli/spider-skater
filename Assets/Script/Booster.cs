@@ -8,6 +8,8 @@ public class Booster : MonoBehaviour
     public float jumpForce = 100f;
     public float cooldownTimer = 10f;
     private bool activated = false;
+
+    public bool isDirectional = false;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!activated && other.CompareTag("Skate"))
@@ -17,23 +19,27 @@ public class Booster : MonoBehaviour
             //var rigidBodies = other.GetComponentsInChildren<Rigidbody2D>();
             Debug.Log(rigidBody.velocity);
             Debug.Log(transform.up * jumpForce);
-            var direction = Vector3.Dot(rigidBody.velocity.normalized, transform.up);
-            if (direction > -0.5f)
+            if (isDirectional)
+            {
+                var direction = Vector3.Dot(rigidBody.velocity.normalized, transform.up);
+                if (direction > -0.5f)
+                {
+                    rigidBody.AddForce(transform.up * jumpForce);
+                    StartCoroutine(RechargeAfterDelay());
+                }
+            }
+            else
             {
                 rigidBody.AddForce(transform.up * jumpForce);
+                StartCoroutine(RechargeAfterDelay());
             }
-            // for (int i = 0; i < rigidBodies.Length; i++)
-            // {
-            //     rigidBodies[i].AddForce(transform.up * jumpForce);
-            // }
-            StartCoroutine(RechargeAfterDelay());
+            
         }
     }
 
     IEnumerator RechargeAfterDelay()
     {
         yield return new WaitForSeconds(cooldownTimer);
-        Debug.Log("Should be relaoded");
         activated = false;
     }
 }
