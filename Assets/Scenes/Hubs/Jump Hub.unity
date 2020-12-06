@@ -741,6 +741,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level 2
       objectReference: {fileID: 0}
+    - target: {fileID: 9003151635808316367, guid: 2533eae8c63132841ae6d5399cea29ad,
+        type: 3}
+      propertyPath: nextLevel
+      value: Jump 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2533eae8c63132841ae6d5399cea29ad, type: 3}
 --- !u!1001 &341910880
@@ -1222,6 +1227,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Level 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003151635808316367, guid: 2533eae8c63132841ae6d5399cea29ad,
+        type: 3}
+      propertyPath: nextLevel
+      value: Jump 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2533eae8c63132841ae6d5399cea29ad, type: 3}
@@ -3058,6 +3068,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9003151635808316367, guid: 2533eae8c63132841ae6d5399cea29ad,
+        type: 3}
+      propertyPath: nextLevel
+      value: Jump 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2533eae8c63132841ae6d5399cea29ad, type: 3}
 --- !u!1 &1516304157
@@ -4176,6 +4191,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cage
+      objectReference: {fileID: 0}
+    - target: {fileID: 33620776341486535, guid: 796646f97c209f84fb73f7e0eafd2311,
+        type: 3}
+      propertyPath: scenes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 33620776341486535, guid: 796646f97c209f84fb73f7e0eafd2311,
+        type: 3}
+      propertyPath: scenes.Array.data[1]
+      value: Jump 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 33620776341486535, guid: 796646f97c209f84fb73f7e0eafd2311,
+        type: 3}
+      propertyPath: scenes.Array.data[0]
+      value: Jump 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 796646f97c209f84fb73f7e0eafd2311, type: 3}

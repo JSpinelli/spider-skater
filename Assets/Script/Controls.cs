@@ -185,12 +185,12 @@ public class Controls : MonoBehaviour
                 rope.enabled = false;
                 ropeAttached = false;
             }
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.W))
             {
                 ropeClimbing = true;
                 remainingRopeTimer = ropeTimer;
             }
-            if (Input.GetKeyUp(KeyCode.Space))
+            if (Input.GetKeyUp(KeyCode.W))
             {
                 ropeClimbing = false;
                 remainingRopeTimer = 0;
