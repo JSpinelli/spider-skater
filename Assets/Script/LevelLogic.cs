@@ -18,7 +18,7 @@ public class LevelLogic : MonoBehaviour
 
     private JointDetacher jointDetacher;
     private Controls playercontrols;
-    private bool respawning = false;
+    [System.NonSerialized] public bool respawning = false;
 
     // Start is called before the first frame update
     public void RespawnPlayer()
@@ -26,13 +26,13 @@ public class LevelLogic : MonoBehaviour
         if (!respawning)
         {
             respawning = true;
-            StartCoroutine(Example());
+            StartCoroutine(Respawn());
         }
 
 
     }
 
-    IEnumerator Example()
+    IEnumerator Respawn()
     {
         if (currentPlayer)
         {
