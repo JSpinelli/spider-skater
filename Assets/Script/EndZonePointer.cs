@@ -6,11 +6,13 @@ public class EndZonePointer : MonoBehaviour
 {
     public GameObject pointer;
     private GameObject endZone;
+
+    public string nameOfObjectToPoint = "EndZone";
     // Start is called before the first frame update
     void Start()
     {
         Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
-        endZone = GameObject.Find("EndZone");
+        endZone = GameObject.Find(nameOfObjectToPoint);
     }
 
     // Update is called once per frame
