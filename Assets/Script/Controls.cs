@@ -156,7 +156,7 @@ public class Controls : MonoBehaviour
                     }
                     else
                     {
-                        if (hits[i].transform.CompareTag("Mesh") || hits[i].transform.CompareTag("Player") || hits[i].transform.CompareTag("Skate"))
+                        if (hits[i].transform.CompareTag("Mesh") || hits[i].transform.CompareTag("Player") || hits[i].transform.CompareTag("Skate") || hits[i].transform.CompareTag("Object"))
                         {
                             i++;
                         }

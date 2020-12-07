@@ -13,6 +13,12 @@ public class EndZonePointer : MonoBehaviour
     {
         Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
         endZone = GameObject.Find(nameOfObjectToPoint);
+        Vector3 theScale = transform.localScale;
+        if (theScale.x > 0)
+        {
+            theScale.x *= -1;
+            transform.localScale = theScale;
+        }
     }
 
     // Update is called once per frame
