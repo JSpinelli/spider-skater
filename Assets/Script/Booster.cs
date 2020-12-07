@@ -16,9 +16,6 @@ public class Booster : MonoBehaviour
         {
             activated = true;
             var rigidBody = other.GetComponent<Rigidbody2D>();
-            //var rigidBodies = other.GetComponentsInChildren<Rigidbody2D>();
-            Debug.Log(rigidBody.velocity);
-            Debug.Log(transform.up * jumpForce);
             if (isDirectional)
             {
                 var direction = Vector3.Dot(rigidBody.velocity.normalized, transform.up);

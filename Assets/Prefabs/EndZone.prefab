@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 9003151635808316367}
   m_Layer: 10
   m_Name: EndZone
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
