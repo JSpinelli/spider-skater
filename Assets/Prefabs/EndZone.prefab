@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 9003151634621959881}
   - component: {fileID: 9003151634621959882}
   m_Layer: 10
-  m_Name: Wall
+  m_Name: Subway
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

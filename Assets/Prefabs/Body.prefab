@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 707302900390123488}
   m_Layer: 9
   m_Name: sneaker 3
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -338,7 +338,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 2673171857318127511}
-  m_RootOrder: 24
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1203384824464279069
 GameObject:
@@ -606,7 +606,7 @@ Transform:
   - {fileID: 7263105931028439510}
   - {fileID: 4158057914991874222}
   m_Father: {fileID: 2673171857318127511}
-  m_RootOrder: 26
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1847046444489146137
 GameObject:
@@ -981,13 +981,13 @@ Transform:
   - {fileID: 5036560107033920107}
   - {fileID: 8230867598926073165}
   - {fileID: 591948875417857253}
+  - {fileID: 8844879172996684053}
   - {fileID: 6382540259106524029}
   - {fileID: 2791067794645777694}
   - {fileID: 666909988221106813}
   - {fileID: 4602081679546645111}
   - {fileID: 6710012837189955438}
   - {fileID: 5111589077538300352}
-  - {fileID: 8844879172996684053}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1358,7 +1358,7 @@ Transform:
   - {fileID: 7872214753143230539}
   - {fileID: 2734131697352050410}
   m_Father: {fileID: 2673171857318127511}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2780557488341442363
 GameObject:
@@ -2175,7 +2175,7 @@ GameObject:
   - component: {fileID: 2376393839398590785}
   m_Layer: 9
   m_Name: sneaker 4
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2330,7 +2330,7 @@ GameObject:
   - component: {fileID: 4572373458098527921}
   m_Layer: 9
   m_Name: sneaker 5
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2820,7 +2820,7 @@ GameObject:
   - component: {fileID: 8002560956559803344}
   m_Layer: 9
   m_Name: sneaker 2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2990,7 +2990,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2673171857318127511}
-  m_RootOrder: 28
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2713181174846690526
 BoxCollider2D:
@@ -3048,7 +3048,7 @@ GameObject:
   - component: {fileID: 5062154171077208447}
   m_Layer: 9
   m_Name: sneaker 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3663,11 +3663,11 @@ GameObject:
   m_Component:
   - component: {fileID: 666909988221106813}
   - component: {fileID: 5019714707277549957}
-  - component: {fileID: 4787184711629304515}
   - component: {fileID: 4298678823443451477}
   - component: {fileID: 358101527738328247}
   - component: {fileID: 2531481256923579237}
-  m_Layer: 10
+  - component: {fileID: 509161551417353088}
+  m_Layer: 8
   m_Name: Sk8te
   m_TagString: Skate
   m_Icon: {fileID: 0}
@@ -3686,7 +3686,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2673171857318127511}
-  m_RootOrder: 27
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5019714707277549957
 SpriteRenderer:
@@ -3738,32 +3738,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4787184711629304515
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5798536405255658212}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.2, y: 0.48}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.2, y: 0.5}
-  m_EdgeRadius: 0
 --- !u!50 &4298678823443451477
 Rigidbody2D:
   serializedVersion: 4
@@ -3977,6 +3951,53 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!60 &509161551417353088
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5798536405255658212}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 0102a5cb20ac5fa4f9aee16070f86a9c, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.2, y: 0.48}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.24, y: -0.24}
+      - {x: 1.5999999, y: -0.04}
+      - {x: 1.5999999, y: 0.22999999}
+      - {x: 1.5899999, y: 0.24}
+      - {x: 1.42, y: 0.24}
+      - {x: 1.3299999, y: 0.19999999}
+      - {x: 1.1678525, y: 0.19757134}
+      - {x: -1.3399999, y: 0.16}
+      - {x: -1.37, y: 0.22999999}
+      - {x: -1.39, y: 0.24}
+      - {x: -1.5999999, y: 0.24}
+      - {x: -1.5999999, y: 0.04}
+      - {x: -1.54, y: -0.089999996}
+      - {x: -1.2099999, y: -0.24}
+      - {x: -0.93, y: -0.24}
+      - {x: -0.87, y: -0.19}
+      - {x: -0.84999996, y: -0.099999994}
+      - {x: 0.2952915, y: -0.11355356}
+      - {x: 0.47954634, y: -0.115734205}
+      - {x: 0.8400007, y: -0.119999774}
+      - {x: 0.84, y: -0.12}
+      - {x: 0.9, y: -0.24}
 --- !u!1 &6016936705793061680
 GameObject:
   m_ObjectHideFlags: 0
@@ -4626,7 +4647,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 2673171857318127511}
-  m_RootOrder: 29
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &6143737540035437440
 BoxCollider2D:
@@ -5134,7 +5155,7 @@ GameObject:
   - component: {fileID: 1076083986379388621}
   m_Layer: 9
   m_Name: sneaker 6
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5498,15 +5519,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4b8609cf1420f44cbd48abc447c078b, type: 3}
---- !u!4 &8844879172996684053 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7341433410707001749, guid: d4b8609cf1420f44cbd48abc447c078b,
-    type: 3}
-  m_PrefabInstance: {fileID: 2260051050257434752}
-  m_PrefabAsset: {fileID: 0}
 --- !u!198 &655983234099766661 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 1605486203576462597, guid: d4b8609cf1420f44cbd48abc447c078b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2260051050257434752}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8844879172996684053 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7341433410707001749, guid: d4b8609cf1420f44cbd48abc447c078b,
     type: 3}
   m_PrefabInstance: {fileID: 2260051050257434752}
   m_PrefabAsset: {fileID: 0}

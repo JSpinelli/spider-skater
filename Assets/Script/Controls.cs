@@ -131,6 +131,7 @@ public class Controls : MonoBehaviour
             else
             {
                 float horizontal = -Input.GetAxis("Horizontal");
+                Debug.Log(horizontal);
                 transform.Rotate(
                     0f,
                     0f,
