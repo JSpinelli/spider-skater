@@ -130,7 +130,8 @@ public class Controls : MonoBehaviour
             }
             else
             {
-                float horizontal = Input.GetAxis("Horizontal");
+                float horizontal = -Input.GetAxis("Horizontal");
+                Debug.Log(horizontal);
                 transform.Rotate(
                     0f,
                     0f,
@@ -185,12 +186,12 @@ public class Controls : MonoBehaviour
                 rope.enabled = false;
                 ropeAttached = false;
             }
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.W))
             {
                 ropeClimbing = true;
                 remainingRopeTimer = ropeTimer;
             }
-            if (Input.GetKeyUp(KeyCode.Space))
+            if (Input.GetKeyUp(KeyCode.W))
             {
                 ropeClimbing = false;
                 remainingRopeTimer = 0;
