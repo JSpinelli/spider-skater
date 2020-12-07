@@ -3776,8 +3776,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2026473555}
   m_LocalRotation: {x: -0, y: -0, z: 0.00000044703478, w: 1}
-  m_LocalPosition: {x: 3.98, y: -1.64, z: 0.76489925}
-  m_LocalScale: {x: 53.659573, y: 6.418271, z: 1}
+  m_LocalPosition: {x: 5.726, y: -1.64, z: 0.76489925}
+  m_LocalScale: {x: 57.151485, y: 6.418271, z: 1}
   m_Children: []
   m_Father: {fileID: 985362426}
   m_RootOrder: 0
@@ -3938,12 +3938,12 @@ PrefabInstance:
     - target: {fileID: 9003151635808316353, guid: 2533eae8c63132841ae6d5399cea29ad,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -58.02
+      value: -55.79
       objectReference: {fileID: 0}
     - target: {fileID: 9003151635808316353, guid: 2533eae8c63132841ae6d5399cea29ad,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.29
+      value: 0.69
       objectReference: {fileID: 0}
     - target: {fileID: 9003151635808316353, guid: 2533eae8c63132841ae6d5399cea29ad,
         type: 3}
@@ -3999,6 +3999,11 @@ PrefabInstance:
         type: 3}
       propertyPath: nextLevel
       value: Tutorial - 2 - Rope
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003151635808316367, guid: 2533eae8c63132841ae6d5399cea29ad,
+        type: 3}
+      propertyPath: automatic
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2533eae8c63132841ae6d5399cea29ad, type: 3}
