@@ -131,7 +131,7 @@ PrefabInstance:
     - target: {fileID: 6671966160929150793, guid: 3b86ac3a5ac09c34184882ddf1f72ac8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -100.43
+      value: -101.51
       objectReference: {fileID: 0}
     - target: {fileID: 6671966160929150793, guid: 3b86ac3a5ac09c34184882ddf1f72ac8,
         type: 3}
@@ -614,7 +614,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -999,7 +999,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2119,7 +2119,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2783,7 +2783,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2844,7 +2844,7 @@ PrefabInstance:
     - target: {fileID: 6671966160929150793, guid: 3b86ac3a5ac09c34184882ddf1f72ac8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -79.81
+      value: -78.6
       objectReference: {fileID: 0}
     - target: {fileID: 6671966160929150793, guid: 3b86ac3a5ac09c34184882ddf1f72ac8,
         type: 3}
