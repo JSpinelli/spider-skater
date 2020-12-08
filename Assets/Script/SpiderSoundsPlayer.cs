@@ -33,6 +33,9 @@ public class SpiderSoundsPlayer : MonoBehaviour
         if (isPlayingSkateSound){
             skateSound.volume = spiderBody.velocity.magnitude / 80;
         }
+        if (isPlayingWindSound){
+            airSound.volume = spiderBody.velocity.magnitude / 150;
+        }
 
 
         //Stop Skate Rolling Sound and Play Jump sound
@@ -54,7 +57,7 @@ public class SpiderSoundsPlayer : MonoBehaviour
         if (!controls.spiderDead && !gDetector.m_Grounded && !isPlayingWindSound && spiderBody.velocity.magnitude > speedTreshold)
         {
             isPlayingWindSound = true;
-            //airSound.Play();
+            airSound.Play();
         }
 
         //Stop Wind Blowing Sound and Land sound
@@ -62,7 +65,7 @@ public class SpiderSoundsPlayer : MonoBehaviour
         {
             Debug.Log("Playing Land Sound");
             isPlayingWindSound = false;
-            //airSound.Stop();
+            airSound.Stop();
             landSound.Play();
         }
 
