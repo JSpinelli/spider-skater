@@ -14,7 +14,7 @@ public class DeathTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            levelLogic.RespawnPlayer();
+            levelLogic.RespawnPlayer(Vector3.zero);
         }
     }
 }
