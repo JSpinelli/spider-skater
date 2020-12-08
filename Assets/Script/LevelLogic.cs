@@ -15,24 +15,40 @@ public class LevelLogic : MonoBehaviour
     private GameObject currentPlayer = null;
 
     public TextMeshProUGUI flipCounter;
+    public TextMeshProUGUI discoveredPrompt;
 
     private JointDetacher jointDetacher;
     private Controls playercontrols;
     [System.NonSerialized] public bool respawning = false;
 
+    private bool[] respawnsAvailable = { false, false, false, false };
+    private Vector3[] respawnsPosition = { new Vector3(), new Vector3(), new Vector3(), new Vector3() };
+
+    private Vector3 currentRespawnSet;
+
+    public float promptTime = 5f;
+    private float prompTimer = 0;
+
     // Start is called before the first frame update
-    public void RespawnPlayer()
+    public void RespawnPlayer(Vector3 position)
     {
         if (!respawning)
         {
             respawning = true;
-            StartCoroutine(Respawn());
+            if (position == Vector3.zero)
+            {
+                StartCoroutine(Respawn(spawnTransform.position));
+            }
+            else
+            {
+                StartCoroutine(Respawn(position));
+            }
+            currentRespawnSet = position;
+
         }
-
-
     }
 
-    IEnumerator Respawn()
+    IEnumerator Respawn(Vector3 position)
     {
         if (currentPlayer)
         {
@@ -41,7 +57,7 @@ public class LevelLogic : MonoBehaviour
             yield return new WaitForSeconds(respawnTimer);
             Destroy(currentPlayer);
         }
-        currentPlayer = Instantiate(player, spawnTransform.position, Quaternion.identity);
+        currentPlayer = Instantiate(player, position, Quaternion.identity);
         playerTrack.player = currentPlayer.transform;
         playercontrols = currentPlayer.GetComponent<Controls>();
         var ropeJoint = currentPlayer.GetComponent<SpringJoint2D>();
@@ -57,7 +73,8 @@ public class LevelLogic : MonoBehaviour
             flipCounter.text = "Flips: 0";
         }
         DeathWallMovement deathWall = FindObjectOfType<DeathWallMovement>();
-        if (deathWall){
+        if (deathWall)
+        {
             deathWall.Respawn();
         }
 
@@ -69,12 +86,27 @@ public class LevelLogic : MonoBehaviour
     }
     void Start()
     {
-        RespawnPlayer();
+        RespawnPlayer(spawnTransform.position);
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (prompTimer > 0)
+        {
+            prompTimer -= Time.deltaTime;
+        }
+        else
+        {
+            discoveredPrompt.text = "";
+        }
+        if (Input.GetKeyUp(KeyCode.Backspace))
+        {
+            PlayerPrefs.DeleteAll();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            currentRespawnSet = spawnTransform.position;
+        }
     }
 }

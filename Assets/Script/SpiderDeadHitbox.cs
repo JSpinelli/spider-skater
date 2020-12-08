@@ -30,7 +30,7 @@ public class SpiderDeadHitbox : MonoBehaviour
                     disableShake = true;
                 }
 
-                levelLogic.RespawnPlayer();
+                levelLogic.RespawnPlayer(Vector3.zero);
             }
         }
     }

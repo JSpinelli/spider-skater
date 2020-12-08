@@ -15,18 +15,42 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorials/Tutorial - 3 - Gravity.unity
     guid: 45a1eb59415a08a409283ccc4010a0c8
   - enabled: 1
-    path: Assets/Scenes/Levels/Level 1.unity
+    path: Assets/Scenes/Fall Levels/Fall 1.unity
     guid: 3bbd553e6f4dae242aefc4b03cbd4d87
   - enabled: 1
     path: Assets/Scenes/Dylan TestScene.unity
     guid: 4df44789e98196f43844f108eca1fa39
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tutorials/Unused - first tutorial.unity
     guid: c17ec4712579f1a4396092bccbe7e044
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LevelTest.unity
     guid: 24e85ad761e590f4caa22873a3ca4a1e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TestScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Hubs/Jump Hub.unity
+    guid: b5e7e9209f16cb94bb25eca2755d9c2b
+  - enabled: 1
+    path: Assets/Scenes/Jump Levels/Jump 1.unity
+    guid: 51940c6c25c3c0f49b5ded3dcbd98566
+  - enabled: 1
+    path: Assets/Scenes/Jump Levels/Jump 2.unity
+    guid: b8e3a399678380641b8e6b10fb64b04a
+  - enabled: 1
+    path: Assets/Scenes/Jump Levels/Jump 3.unity
+    guid: 7cbfe0ac8ec601c40beeaa7cbb05154c
+  - enabled: 1
+    path: Assets/Scenes/Hubs/Climb Hub.unity
+    guid: e3ebd8d3d2519d74d9febc2eb1261a95
+  - enabled: 1
+    path: Assets/Scenes/Climb Levels/Climb 1.unity
+    guid: 60af44415ec658445a7e2895a69eff94
+  - enabled: 1
+    path: Assets/Scenes/Climb Levels/Climb 2.unity
+    guid: 38145d56718c53840b4f368ac3ee322a
+  - enabled: 1
+    path: Assets/Scenes/Climb Levels/Climb 3.unity
+    guid: 601c190f97de6c64881a5f2e55fc3586
   m_configObjects: {}
