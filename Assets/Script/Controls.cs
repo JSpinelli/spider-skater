@@ -12,7 +12,7 @@ public class Controls : MonoBehaviour
     private bool ropeAttached = false;
 
     private bool ropeClimbing = false;
-    public float ropeTimer = 1;
+    public float ropeTimer = 0.2f;
     public float distanceToClimb = 1;
     private float remainingRopeTimer = 0;
 
@@ -84,7 +84,7 @@ public class Controls : MonoBehaviour
             else
             {
                 ropeAnimTriggered = false;
-                if (shouldAttach && mouseIsDown )
+                if (shouldAttach && mouseIsDown)
                 {
                     rope.enabled = true;
                     rope.connectedAnchor = attachPoint.point;
@@ -122,16 +122,12 @@ public class Controls : MonoBehaviour
             {
                 ropeRender.SetPosition(0, transform.position);
                 ropeRender.SetPosition(1, rope.connectedAnchor);
-                if (ropeClimbing)
-                {
-                    this.climb();
-                }
+                this.climb();
                 body.AddForce(new Vector2(Input.GetAxis("Horizontal") * swingForce, 0));
             }
             else
             {
                 float horizontal = -Input.GetAxis("Horizontal");
-                Debug.Log(horizontal);
                 transform.Rotate(
                     0f,
                     0f,
@@ -186,16 +182,6 @@ public class Controls : MonoBehaviour
                 rope.enabled = false;
                 ropeAttached = false;
             }
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                ropeClimbing = true;
-                remainingRopeTimer = ropeTimer;
-            }
-            if (Input.GetKeyUp(KeyCode.W))
-            {
-                ropeClimbing = false;
-                remainingRopeTimer = 0;
-            }
             if (Input.GetKeyUp(KeyCode.R))
             {
                 Scene scene = SceneManager.GetActiveScene();
@@ -207,14 +193,30 @@ public class Controls : MonoBehaviour
 
     public void climb()
     {
-        if (remainingRopeTimer < 0)
+        if (Input.GetAxis("Vertical") != 0)
         {
-            rope.distance = rope.distance - distanceToClimb;
-            remainingRopeTimer = ropeTimer;
+            if (remainingRopeTimer <= 0)
+            {
+                if (Input.GetAxis("Vertical") > 0)
+                {
+                    rope.distance = rope.distance - distanceToClimb;
+                }
+                else
+                {
+                    rope.distance = rope.distance + distanceToClimb;
+                }
+
+                remainingRopeTimer = ropeTimer;
+            }
+            else
+            {
+                remainingRopeTimer = remainingRopeTimer - Time.deltaTime;
+            }
         }
         else
         {
-            remainingRopeTimer = remainingRopeTimer - Time.deltaTime;
+            remainingRopeTimer = ropeTimer;
         }
+
     }
 }

@@ -1094,10 +1094,10 @@ MonoBehaviour:
   rope: {fileID: 3671054141966961839}
   ropeRender: {fileID: 0}
   ropeDistance: 20
-  ropeTimer: 1
-  distanceToClimb: 3
+  ropeTimer: 0.25
+  distanceToClimb: 1
   rotationSpeed: 3
-  distanceRemovedOnContact: 2.5
+  distanceRemovedOnContact: 1.5
   maxVelocity: 100
   swingForce: 0.5
   body: {fileID: 2673171857318127512}
