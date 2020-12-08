@@ -1095,7 +1095,7 @@ MonoBehaviour:
   ropeRender: {fileID: 0}
   ropeDistance: 20
   ropeTimer: 0.25
-  distanceToClimb: 1
+  distanceToClimb: 1.25
   rotationSpeed: 3
   distanceRemovedOnContact: 1.5
   maxVelocity: 100
