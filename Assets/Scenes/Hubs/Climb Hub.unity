@@ -2378,7 +2378,7 @@ PrefabInstance:
     - target: {fileID: 9003151635808316353, guid: 2533eae8c63132841ae6d5399cea29ad,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -153.49
+      value: -153.56
       objectReference: {fileID: 0}
     - target: {fileID: 9003151635808316353, guid: 2533eae8c63132841ae6d5399cea29ad,
         type: 3}
@@ -2438,7 +2438,7 @@ PrefabInstance:
     - target: {fileID: 9003151635808316367, guid: 2533eae8c63132841ae6d5399cea29ad,
         type: 3}
       propertyPath: nextLevel
-      value: Climb 1
+      value: End Credits
       objectReference: {fileID: 0}
     - target: {fileID: 9003151635808316367, guid: 2533eae8c63132841ae6d5399cea29ad,
         type: 3}

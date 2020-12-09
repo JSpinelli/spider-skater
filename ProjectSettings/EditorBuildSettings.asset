@@ -50,6 +50,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Climb Levels/Climb 3.unity
     guid: 601c190f97de6c64881a5f2e55fc3586
+  - enabled: 1
+    path: Assets/Scenes/End Credits.unity
+    guid: 346dcaadb91753c48be490b2a30281da
   - enabled: 0
     path: Assets/Scenes/Dylan TestScene.unity
     guid: 4df44789e98196f43844f108eca1fa39
