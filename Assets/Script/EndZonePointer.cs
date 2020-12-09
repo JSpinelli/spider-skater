@@ -6,15 +6,27 @@ public class EndZonePointer : MonoBehaviour
 {
     public GameObject pointer;
     private GameObject endZone;
+    private SceneLoader loader;
 
-    public string nameOfObjectToPoint = "EndZone";
+    public string[] sequenceOfLevels = {"Level 1","Level 2","Level 3", "EndZone"};
+
     // Start is called before the first frame update
     void Start()
     {
         Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
-        endZone = GameObject.Find(nameOfObjectToPoint);
+
+        bool found = false;
+        int i = 0;
+        while (i < sequenceOfLevels.Length && !found)
+        {
+            endZone = GameObject.Find(sequenceOfLevels[i]);
+            loader = endZone.GetComponent<SceneLoader>();
+            if (!loader.imCompleted){
+                found = true;
+            }
+        }
         Vector3 theScale = transform.localScale;
-        if (theScale.x > 0)
+        if (theScale.x < 0)
         {
             theScale.x *= -1;
             transform.localScale = theScale;

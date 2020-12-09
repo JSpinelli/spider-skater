@@ -92,14 +92,6 @@ public class LevelLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (prompTimer > 0)
-        {
-            prompTimer -= Time.deltaTime;
-        }
-        else
-        {
-            discoveredPrompt.text = "";
-        }
         if (Input.GetKeyUp(KeyCode.Backspace))
         {
             PlayerPrefs.DeleteAll();

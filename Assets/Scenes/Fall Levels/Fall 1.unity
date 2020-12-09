@@ -318,6 +318,11 @@ PrefabInstance:
       propertyPath: automatic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9003151635808316367, guid: 2533eae8c63132841ae6d5399cea29ad,
+        type: 3}
+      propertyPath: isEnd
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2533eae8c63132841ae6d5399cea29ad, type: 3}
 --- !u!1001 &959468667
@@ -636,6 +641,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2656208531572471635, guid: 947ee479b10406146bb938c79f13d274,
+        type: 3}
+      propertyPath: sequenceOfLevels.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656208531572471635, guid: 947ee479b10406146bb938c79f13d274,
+        type: 3}
+      propertyPath: sequenceOfLevels.Array.data[0]
+      value: EndZone
+      objectReference: {fileID: 0}
     - target: {fileID: 3441098924651202936, guid: 947ee479b10406146bb938c79f13d274,
         type: 3}
       propertyPath: m_LocalPosition.x

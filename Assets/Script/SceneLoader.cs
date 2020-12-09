@@ -17,14 +17,14 @@ public class SceneLoader : MonoBehaviour
 
     private LevelLogic levelLogic;
 
-    private bool imCompleted = false;
+    public bool imCompleted = false;
 
     private void Awake()
     {
         levelLogic = GameObject.Find("Logic").GetComponent<LevelLogic>();
         var status = PlayerPrefs.GetString(nextLevel, "notcompleted");
         imCompleted = status == "completed";
-        Debug.Log(nextLevel+"Is completed? "+imCompleted);
+        Debug.Log(nextLevel+" is completed? "+imCompleted);
     }
     void Update()
     {
