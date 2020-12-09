@@ -21,13 +21,7 @@ public class LevelLogic : MonoBehaviour
     private Controls playercontrols;
     [System.NonSerialized] public bool respawning = false;
 
-    private bool[] respawnsAvailable = { false, false, false, false };
-    private Vector3[] respawnsPosition = { new Vector3(), new Vector3(), new Vector3(), new Vector3() };
-
     private Vector3 currentRespawnSet;
-
-    public float promptTime = 5f;
-    private float prompTimer = 0;
 
     // Start is called before the first frame update
     public void RespawnPlayer(Vector3 position)

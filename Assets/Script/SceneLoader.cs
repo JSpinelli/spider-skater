@@ -24,7 +24,7 @@ public class SceneLoader : MonoBehaviour
         levelLogic = GameObject.Find("Logic").GetComponent<LevelLogic>();
         var status = PlayerPrefs.GetString(nextLevel, "notcompleted");
         imCompleted = status == "completed";
-        Debug.Log(nextLevel+" is completed? "+imCompleted);
+        Debug.Log(nextLevel + " is completed? " + imCompleted);
     }
     void Update()
     {
@@ -32,17 +32,22 @@ public class SceneLoader : MonoBehaviour
         {
             this.loadStage();
         }
-        if (Input.GetKeyDown(KeyCode.Alpha1) && respawnLevel==1 )
+        if (Input.GetKeyDown(KeyCode.Alpha1) && respawnLevel == 1)
         {
             levelLogic.RespawnPlayer(transform.position);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2) && respawnLevel==2)
+        if (Input.GetKeyDown(KeyCode.Alpha2) && respawnLevel == 2)
         {
             levelLogic.RespawnPlayer(transform.position);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3) && respawnLevel==3 )
+        if (Input.GetKeyDown(KeyCode.Alpha3) && respawnLevel == 3)
         {
             levelLogic.RespawnPlayer(transform.position);
+        }
+        if (Input.GetKeyDown(KeyCode.N) && isEnd)
+        {
+            PlayerPrefs.SetString(SceneManager.GetActiveScene().name, "completed");
+            SceneManager.LoadScene(nextLevel);
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
