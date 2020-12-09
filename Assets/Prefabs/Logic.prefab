@@ -232,7 +232,6 @@ MonoBehaviour:
   respawnTimer: 2
   flipCounter: {fileID: 0}
   discoveredPrompt: {fileID: 0}
-  promptTime: 5
 --- !u!1 &3441098924911805073
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,7 +890,7 @@ PrefabInstance:
     - target: {fileID: 5456437597676559369, guid: a2581e882442c8e42a57de9209db73e0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 5456437597676559369, guid: a2581e882442c8e42a57de9209db73e0,
         type: 3}
