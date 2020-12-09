@@ -3081,7 +3081,7 @@ MonoBehaviour:
   nextLevel: Jump Hub
   automatic: 1
   keyPrompt: {fileID: 888803885012259412}
-  isEnd: 0
+  isEnd: 1
   isRespawn: 0
   respawnLevel: 2
   imCompleted: 0
