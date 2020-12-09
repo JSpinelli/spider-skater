@@ -754,8 +754,8 @@ PolygonCollider2D:
       - {x: 28.6559, y: 67.822395}
       - {x: 28.56102, y: 60.903873}
       - {x: 14.489441, y: 60.842476}
-      - {x: 14.538658, y: 89.60379}
-      - {x: -1.0394516, y: 89.38846}
+      - {x: 14.465591, y: 89.20185}
+      - {x: -1.0759811, y: 89.2423}
       - {x: -1.188652, y: 82.19034}
       - {x: 5.6166534, y: 82.22276}
       - {x: 5.20356, y: 46.450165}
@@ -850,7 +850,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: 14.538658, y: 89.60379, z: 0}
+    - position: {x: 14.465591, y: 89.20185, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -859,7 +859,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: -1.0394516, y: 89.38846, z: 0}
+    - position: {x: -1.0759811, y: 89.2423, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
