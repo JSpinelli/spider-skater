@@ -32,15 +32,15 @@ public class SceneLoader : MonoBehaviour
         {
             this.loadStage();
         }
-        if (Input.GetKeyDown(KeyCode.Alpha1) && respawnLevel == 1)
+        if (Input.GetKeyDown(KeyCode.Alpha1) && isRespawn && respawnLevel == 1)
         {
             levelLogic.RespawnPlayer(transform.position);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2) && respawnLevel == 2)
+        if (Input.GetKeyDown(KeyCode.Alpha2) && isRespawn && respawnLevel == 2)
         {
             levelLogic.RespawnPlayer(transform.position);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3) && respawnLevel == 3)
+        if (Input.GetKeyDown(KeyCode.Alpha3) && isRespawn && respawnLevel == 3)
         {
             levelLogic.RespawnPlayer(transform.position);
         }
