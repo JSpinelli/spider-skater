@@ -24,6 +24,7 @@ public class EndZonePointer : MonoBehaviour
             if (!loader.imCompleted){
                 found = true;
             }
+            i++;
         }
         Vector3 theScale = transform.localScale;
         if (theScale.x < 0)

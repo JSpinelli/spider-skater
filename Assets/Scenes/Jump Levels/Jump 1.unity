@@ -2224,6 +2224,11 @@ PrefabInstance:
       propertyPath: sequenceOfLevels.Array.data[0]
       value: EndZone
       objectReference: {fileID: 0}
+    - target: {fileID: 3354735033608865691, guid: 947ee479b10406146bb938c79f13d274,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3416741796337023426, guid: 947ee479b10406146bb938c79f13d274,
         type: 3}
       propertyPath: pointer

@@ -633,6 +633,11 @@ PrefabInstance:
       propertyPath: flipCounter
       value: 
       objectReference: {fileID: 908400022}
+    - target: {fileID: 5035265195233308354, guid: 947ee479b10406146bb938c79f13d274,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 947ee479b10406146bb938c79f13d274, type: 3}
 --- !u!1001 &844931260

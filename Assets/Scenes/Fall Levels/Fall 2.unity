@@ -2541,7 +2541,7 @@ GameObject:
   - component: {fileID: 321400827}
   m_Layer: 0
   m_Name: WoodSpriteShape (3)
-  m_TagString: Untagged
+  m_TagString: Ropable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2759,7 +2759,7 @@ GameObject:
   - component: {fileID: 390236290}
   m_Layer: 0
   m_Name: WoodSpriteShape (4)
-  m_TagString: Untagged
+  m_TagString: Ropable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3572,7 +3572,7 @@ GameObject:
   - component: {fileID: 454565994}
   m_Layer: 0
   m_Name: WoodSpriteShape
-  m_TagString: Untagged
+  m_TagString: Ropable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5406,7 +5406,7 @@ GameObject:
   - component: {fileID: 888286616}
   m_Layer: 0
   m_Name: WoodSpriteShape (1)
-  m_TagString: Untagged
+  m_TagString: Ropable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8032,6 +8032,11 @@ PrefabInstance:
       propertyPath: flipCounter
       value: 
       objectReference: {fileID: 655768430}
+    - target: {fileID: 7609782935338262593, guid: 947ee479b10406146bb938c79f13d274,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 947ee479b10406146bb938c79f13d274, type: 3}
 --- !u!1001 &1774816862
