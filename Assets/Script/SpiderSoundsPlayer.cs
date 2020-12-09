@@ -57,6 +57,7 @@ public class SpiderSoundsPlayer : MonoBehaviour
         if (!controls.spiderDead && !gDetector.m_Grounded && !isPlayingWindSound && spiderBody.velocity.magnitude > speedTreshold)
         {
             isPlayingWindSound = true;
+            airSound.volume = 0.001f;
             airSound.Play();
         }
 
